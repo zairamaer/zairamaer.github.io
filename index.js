@@ -5,16 +5,28 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const password = document.getElementById('password').value;
     
     // Encrypted credentials (base64)
-    const encodedUsername = 'YWRtaW4='; // "admin"
-    const encodedPassword = 'cGFzc3dvcmQ='; // "password"
+    const encodedUsername = 'YWRtaW4='; //username
+    const encodedPassword = 'cGFzc3dvcmQ='; //password
     
     // Decode the base64 strings
     const decodedUsername = atob(encodedUsername);
     const decodedPassword = atob(encodedPassword);
-
+    
     if (username === decodedUsername && password === decodedPassword) {
-        document.getElementById('message').innerHTML = 'Login successful! Flag: iasCTF{congrats_you_found_the_flag}';
+        // Generate and display the flag message
+        displayFlag();
     } else {
         document.getElementById('message').innerHTML = 'Incorrect username or password.';
     }
 });
+
+function displayFlag() {
+    // Encrypted flag (base64 encoded)
+    const encryptedFlag = 'aWFzQ1RGe2NvbmdyYXRzX3lvdV9mb3VuZF90aGVfZmxhZ30='; 
+    
+    // Decode the base64 string to reveal the flag
+    const flag = atob(encryptedFlag);
+    
+    // Display the flag message
+    document.getElementById('message').innerHTML = `Login successful! Flag: ${flag}`;
+}
