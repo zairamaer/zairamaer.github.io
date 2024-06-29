@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment Hunter Challenge</title>
     <link rel="stylesheet" href="style.css">
+    <title>Secret Login</title>
 </head>
 <body>
-    <header>
-        <h1>Comment Hunter Challenge</h1>
-        <p>Welcome to the Comment Hunter challenge!</p>
-    </header>
-    <main>
-        <section id="challenge">
-            <h2>Description:</h2>
-            <p>Your task is to find a hidden flag within the comments of this website.</p>
-            <p>The flag is in the format <code>iasCTF{my_flag_here}</code>.</p>
-            <p>Inspect the page source to uncover it!</p>
-        </section>
-        <section id="footer">
-            <p>Challenge created by [Your Name]</p>
-        </section>
-    </main>
-    <script src="script.js"></script>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Login">
+        </form>
+        <p id="message"></p>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
